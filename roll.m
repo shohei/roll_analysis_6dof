@@ -17,15 +17,15 @@ rho = 1.293;%kg/m3
 S = ;%翼面積
 
 %FROM DATCOM
-C_yb = ;%default
-C_lb = ;%default
-C_nb = ;%default
-C_yp = ;%option
-C_yr = ;%option
-C_lp = ;%option
-C_nr = ;%option
-C_np = ;%option
-C_nr = ;%option
+C_yb = ;%CYB in DATCOM
+C_lb = ;%CLLB in DATCOM
+C_nb = ;%CLNB in DATCOM
+C_yp = ;%CYP in DATCOM
+C_yr = ;%CYR in DATCOM
+C_lp = ;%CLLP in DATCOM
+C_nr = ;%CLNR in DATCOM
+C_np = ;%CLNP in DATCOM
+C_nr = ;%CLNR in DATCOM
 
 Y_b = rho*U0^2*S/(2*m)*C_yb;
 L_b = rho*U0^2*S*b/(2*Ix)*C_lb;
