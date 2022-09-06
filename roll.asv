@@ -11,10 +11,10 @@ M = [m     0    0 0 0;
      0     0    0 1 0;
      0     0    0 0 1];
 
-b = 1; %スパン長
+b = %スパン長
 U0 = 100;%飛行速度 100m/s
 rho = 1.293;%kg/m3
-S = 1;%翼面積
+S = ;%翼面積
 
 %FROM DATCOM: 迎角ゼロの場合
 C_yb = -0.1931;%CYB in DATCOM
@@ -27,19 +27,20 @@ C_lp = 0;%CLLP in DATCOM
 C_nr = -0.929;%CLNR in DATCOM
 C_np = 0;%CLNP in DATCOM
 
+
 Y_b = rho*U0^2*S/(2*m)*C_yb;
-L_b = rho*U0^2*S*b/(2*I_x)*C_lb;
-N_b = rho*U0^2*S*b/(2*I_z)*C_nb;
+L_b = rho*U0^2*S*b/(2*Ix)*C_lb;
+N_b = rho*U0^2*S*b/(2*Iz)*C_nb;
 Y_v = Y_b/U0;%横滑り角βと速度vの関係より
 L_v = L_b/U0;%横滑り角βと速度vの関係より
 N_v = N_b/U0;%横滑り角βと速度vの関係より
 
 Y_p = rho*U0*S*b/(4*m)*C_yp;
 Y_r = rho*U0*S*b/(4*m)*C_yr;
-L_p = rho*U0*S*b^2/(4*I_x)*C_lp; 
-L_r = rho*U0*S*b^2/(4*I_x)*C_nr;
-N_p = rho*U0*S*b^2/(4*I_z)*C_np; 
-N_r = rho*U0*S*b^2/(4*I_z)*C_nr;
+L_p = rho*U0*S*b^2/(4*Ix)*C_lp; 
+L_r = rho*U0*S*b^2/(4*Ix)*C_nr;
+N_p = rho*U0*S*b^2/(4*Iz)*C_np; 
+N_r = rho*U0*S*b^2/(4*Iz)*C_nr;
 
 We = 1;
 Ue = 1;

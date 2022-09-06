@@ -1,27 +1,5 @@
- THIS SOFTWARE AND ANY ACCOMPANYING DOCUMENTATION
- IS RELEASED "AS IS".  THE U.S. GOVERNMENT MAKES NO
- WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, CONCERNING
- THIS SOFTWARE AND ANY ACCOMPANYING DOCUMENTATION,
- INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OF
- MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
- IN NO EVENT WILL THE U.S. GOVERNMENT BE LIABLE FOR ANY
- DAMAGES, INCLUDING LOST PROFITS, LOST SAVINGS OR OTHER
- INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE 
- USE, OR INABILITY TO USE, THIS SOFTWARE OR ANY
- ACCOMPANYING DOCUMENTATION, EVEN IF INFORMED IN ADVANCE
- OF THE POSSIBILITY OF SUCH DAMAGES.
-
-   ****************************************************
-   *  THE USAF AUTOMATED MISSILE DATCOM PROGRAM       *
-   *  AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS  *
-   *  REV. 3/99  DIRECT INQUIRIES TO:                 *
-   *    AIR FORCE RESEARCH LABORATORY                 *
-   *    AIR VEHICLES DIRECTORATE, AFRL/VACA           *
-   *    ATTN: WILLIAM B. BLAKE                        *
-   *    2210 EIGHTH STREET, SUITE 21, AREA B          *
-   *    WRIGHT PATTERSON AFB, OHIO  45433-7531        *
-   *    PHONE (937) 255-6764,   FAX (937) 255-3438    *
-   ****************************************************
+1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****
+               AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS     
 
     CONERR - INPUT ERROR CHECKING
 
@@ -50,13 +28,14 @@
   13           ZUPPER=2*0.02238,LMAXU=2*0.288,LFLATU=2*0.428,$                       
   14 PART                                                                            
   15 PLOT                                                                            
-  16 PRESSURES                                                                       
-  17 SAVE                                                                            
-  18 NEXT CASE                                                                       
-  19  $TRIM SET=2.,$                                                                 
-  20 PRINT AERO TRIM                                                                 
-  21 PLOT                                                                            
-  22 NEXT CASE                                                                       
+  16 DAMP DB14                                                                       
+  17 PRESSURES                                                                       
+  18 SAVE                                                                            
+  19 NEXT CASE                                                                       
+  20  $TRIM SET=2.,$                                                                 
+  21 PRINT AERO TRIM                                                                 
+  22 PLOT                                                                            
+  23 NEXT CASE                                                                       
 1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   1
                AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE   1
     CASE INPUTS
@@ -77,6 +56,7 @@
            ZUPPER=2*0.02238,LMAXU=2*0.288,LFLATU=2*0.428,$                       
  PART                                                                            
  PLOT                                                                            
+ DAMP DB14                                                                       
  PRESSURES                                                                       
  SAVE                                                                            
  NEXT CASE                                                                       
@@ -193,12 +173,12 @@
        0.05000   0.05000   0.00391   0.05000  -0.00391   0.00000   0.00781
        0.06000   0.06000   0.00469   0.06000  -0.00469   0.00000   0.00937
        0.08000   0.08000   0.00625   0.08000  -0.00625   0.00000   0.01250
-       0.10000   0.10000   0.00781   0.10000  -0.00781   0.00000   0.01563
+       0.10000   0.10000   0.00781   0.10000  -0.00781   0.00000   0.01562
        0.12000   0.12000   0.00937   0.12000  -0.00937   0.00000   0.01875
        0.14000   0.14000   0.01094   0.14000  -0.01094   0.00000   0.02187
        0.16000   0.16000   0.01250   0.16000  -0.01250   0.00000   0.02500
        0.18000   0.18000   0.01406   0.18000  -0.01406   0.00000   0.02812
-       0.20000   0.20000   0.01563   0.20000  -0.01563   0.00000   0.03125
+       0.20000   0.20000   0.01562   0.20000  -0.01562   0.00000   0.03125
        0.22000   0.22000   0.01719   0.22000  -0.01719   0.00000   0.03437
        0.24000   0.24000   0.01875   0.24000  -0.01875   0.00000   0.03750
        0.26000   0.26000   0.02031   0.26000  -0.02031   0.00000   0.04062
@@ -292,19 +272,19 @@
      REF LENGTH =     3.75 FT          LAT REF LENGTH =      3.75 FT
 
       ALPHA    CA-FRIC  CA-PRES/WAVE CA-BASE    CA-PROT     CA-SEP     CA-ALP
-       0.00     0.0560     0.0969     0.0897                0.0000     0.0000
-       4.00     0.0558     0.0967     0.0895                0.0000     0.0000
+       0.00     0.0560     0.0969     0.0897                0.0000    -0.0000
+       4.00     0.0558     0.0967     0.0895                0.0000    -0.0000
        8.00     0.0549     0.0964     0.0889                0.0000     0.0000
       12.00     0.0536     0.0958     0.0878                0.0000     0.0000
       16.00     0.0518     0.0950     0.0863                0.0000     0.0000
-      20.00     0.0495     0.0939     0.0843                0.0000     0.0000
+      20.00     0.0495     0.0939     0.0843                0.0000    -0.0000
       24.00     0.0468     0.0926     0.0820                0.0000     0.0000
-      28.00     0.0437     0.0910     0.0792                0.0000     0.0000
+      28.00     0.0437     0.0910     0.0792                0.0000    -0.0000
 
                      CROSS FLOW DRAG PROPORTIONALITY FACTOR = 1.00000
 
       ALPHA    CN-POTEN  CN-VISC   CN-SEP    CM-POTEN  CM-VISC   CM-SEP    CDC
-       0.00     0.000     0.000     0.000     0.000     0.000     0.000   0.740
+       0.00     0.000     0.000     0.000     0.000    -0.000     0.000   0.740
        4.00     0.196     0.047     0.000     0.697    -0.022     0.000   0.841
        8.00     0.388     0.232     0.000     1.377    -0.108     0.000   1.044
       12.00     0.571     0.665     0.000     2.026    -0.310     0.000   1.340
@@ -361,7 +341,7 @@
       ALPHA      CN        CN        CN        CM        CM        CM
                LINEAR  NON-LINEAR  TOTAL     LINEAR  NON-LINEAR  TOTAL
 
-       0.00    0.0000    0.0000    0.0000    0.0000    0.0000    0.0000
+       0.00    0.0000    0.0000    0.0000   -0.0000   -0.0000    0.0000
        4.00    0.2498    0.0153    0.2651   -0.0888   -0.0053   -0.0941
        8.00    0.4947    0.0541    0.5488   -0.1759   -0.0189   -0.1948
       12.00    0.7300    0.1058    0.8358   -0.2595   -0.0370   -0.2965
@@ -418,7 +398,7 @@
       ALPHA      CN        CN        CN        CM        CM        CM
                LINEAR  NON-LINEAR  TOTAL     LINEAR  NON-LINEAR  TOTAL
 
-       0.00    0.0000    0.0000    0.0000    0.0000    0.0000    0.0000
+       0.00    0.0000    0.0000    0.0000   -0.0000   -0.0000    0.0000
        4.00    0.3952    0.0033    0.3985   -1.7351   -0.0146   -1.7497
        8.00    0.7826    0.0264    0.8091   -3.4364   -0.1169   -3.5533
       12.00    1.1549    0.0900    1.2449   -5.0709   -0.3980   -5.4689
@@ -440,14 +420,14 @@
 
       ALPHA       CN         CM         CA         CY         CLN        CLL
 
-       0.00     0.0000     0.0000     0.0246     0.0000     0.0000     0.0000
-       4.00     0.3667    -0.1304     0.0246     0.0000     0.0000     0.0000
-       8.00     0.7206    -0.2562     0.0246     0.0000     0.0000     0.0000
-      12.00     1.0316    -0.3667     0.0246     0.0000     0.0000     0.0000
-      16.00     1.2509    -0.4447     0.0246     0.0000     0.0000     0.0000
-      20.00     1.4289    -0.5080     0.0246     0.0000     0.0000     0.0000
-      24.00     1.6160    -0.5745     0.0246     0.0000     0.0000     0.0000
-      28.00     1.7821    -0.6336     0.0246     0.0000     0.0000     0.0000
+       0.00     0.0000     0.0000     0.0246     0.0000    -0.0000     0.0000
+       4.00     0.3667    -0.1304     0.0246    -0.0000     0.0000     0.0000
+       8.00     0.7206    -0.2562     0.0246    -0.0000     0.0000     0.0000
+      12.00     1.0316    -0.3667     0.0246    -0.0000     0.0000     0.0000
+      16.00     1.2509    -0.4447     0.0246    -0.0000     0.0000     0.0000
+      20.00     1.4289    -0.5080     0.0246    -0.0000     0.0000     0.0000
+      24.00     1.6160    -0.5745     0.0246    -0.0000     0.0000     0.0000
+      28.00     1.7821    -0.6336     0.0246    -0.0000     0.0000     0.0000
 1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   1
                AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE  13
                  AERODYNAMIC FORCE AND MOMENT SYNTHESIS
@@ -462,14 +442,14 @@
 
       ALPHA       CN         CM         CA         CY         CLN        CLL
 
-       0.00     0.0000     0.0000     0.1041     0.0000     0.0000     0.0000
-       4.00     0.3934    -1.7272     0.1041     0.0000     0.0000     0.0000
-       8.00     0.7753    -3.4042     0.1041     0.0000     0.0000     0.0000
-      12.00     1.1790    -5.1767     0.1041     0.0000     0.0000     0.0000
-      16.00     1.5721    -6.9029     0.1041     0.0000     0.0000     0.0000
-      20.00     1.9600    -8.6060     0.1041     0.0000     0.0000     0.0000
-      24.00     2.3304   -10.2322     0.1041     0.0000     0.0000     0.0000
-      28.00     2.6810   -11.7717     0.1041     0.0000     0.0000     0.0000
+       0.00     0.0000     0.0000     0.1041     0.0000    -0.0000     0.0000
+       4.00     0.3934    -1.7272     0.1041     0.0000    -0.0000    -0.0000
+       8.00     0.7753    -3.4042     0.1041     0.0000    -0.0000     0.0000
+      12.00     1.1790    -5.1767     0.1041     0.0000    -0.0000    -0.0000
+      16.00     1.5721    -6.9029     0.1041     0.0000    -0.0000    -0.0000
+      20.00     1.9600    -8.6060     0.1041     0.0000    -0.0000    -0.0000
+      24.00     2.3304   -10.2322     0.1041     0.0000    -0.0000    -0.0000
+      28.00     2.6810   -11.7717     0.1041     0.0000    -0.0000    -0.0000
 1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   1
                AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE  14
                  AERODYNAMIC FORCE AND MOMENT SYNTHESIS
@@ -488,42 +468,42 @@
        0.00        2              0.0000           0.0000
        0.00        3              0.0000           0.0000
        0.00        4              0.0000           0.0000
- 
+
        4.00        1              5.4522           0.1834
        4.00        2             -5.4522          -0.1834
        4.00        3              0.0000           0.0000
        4.00        4              0.0000           0.0000
- 
+
        8.00        1             10.3870           0.3603
        8.00        2            -10.3870          -0.3603
        8.00        3              0.0000           0.0000
        8.00        4              0.0000           0.0000
- 
+
       12.00        1             14.7699           0.5158
       12.00        2            -14.7699          -0.5158
       12.00        3              0.0000           0.0000
       12.00        4              0.0000           0.0000
- 
+
       16.00        1             18.0288           0.6255
       16.00        2            -18.0288          -0.6255
       16.00        3              0.0000           0.0000
       16.00        4              0.0000           0.0000
- 
+
       20.00        1             20.8387           0.7144
       20.00        2            -20.8387          -0.7144
       20.00        3              0.0000           0.0000
       20.00        4              0.0000           0.0000
- 
+
       24.00        1             24.0898           0.8080
       24.00        2            -24.0898          -0.8080
       24.00        3              0.0000           0.0000
       24.00        4              0.0000           0.0000
- 
+
       28.00        1             27.3206           0.8911
       28.00        2            -27.3206          -0.8911
       28.00        3              0.0000           0.0000
       28.00        4              0.0000           0.0000
- 
+
 1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   1
                AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE  15
                  AERODYNAMIC FORCE AND MOMENT SYNTHESIS
@@ -542,42 +522,42 @@
        0.00        2              0.0000           0.0000
        0.00        3              0.0000           0.0000
        0.00        4              0.0000           0.0000
- 
+
        4.00        1              0.0000           0.0000
        4.00        2              3.9491           0.1967
        4.00        3              0.0000           0.0000
        4.00        4             -3.9491          -0.1967
- 
-       8.00        1              0.0000           0.0000
+
+       8.00        1             -0.0000          -0.0000
        8.00        2              7.6781           0.3877
        8.00        3              0.0000           0.0000
        8.00        4             -7.6781          -0.3877
- 
+
       12.00        1              0.0000           0.0000
       12.00        2             11.4134           0.5895
       12.00        3              0.0000           0.0000
       12.00        4            -11.4134          -0.5895
- 
+
       16.00        1              0.0000           0.0000
       16.00        2             14.7634           0.7861
       16.00        3              0.0000           0.0000
       16.00        4            -14.7634          -0.7861
- 
+
       20.00        1              0.0000           0.0000
       20.00        2             18.1403           0.9800
       20.00        3              0.0000           0.0000
       20.00        4            -18.1403          -0.9800
- 
-      24.00        1              0.0000           0.0000
+
+      24.00        1             -0.0000          -0.0000
       24.00        2             21.5607           1.1652
       24.00        3              0.0000           0.0000
       24.00        4            -21.5607          -1.1652
- 
+
       28.00        1              0.0000           0.0000
       28.00        2             24.9264           1.3405
       28.00        3              0.0000           0.0000
       28.00        4            -24.9264          -1.3405
- 
+
 1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   1
                AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE  16
                  AERODYNAMIC FORCE AND MOMENT SYNTHESIS
@@ -592,14 +572,14 @@
 
       ALPHA   K-W(B)   K-B(W)  KK-W(B)  KK-B(W)  XCP-W(B) XCP-B(W) Y-CP/(B/2)
 
-       0.00   1.4037   0.4360   0.9347   0.3658   0.3555   1.0903   0.4055
-       4.00   1.3649   0.4360   0.9347   0.3658   0.3555   1.0903   0.3730
+       0.00   1.4031   0.4360   0.9347   0.3658   0.3555   1.0903   0.4055
+       4.00   1.3650   0.4360   0.9347   0.3658   0.3555   1.0903   0.3730
        8.00   1.3042   0.4360   0.9347   0.3658   0.3555   1.0903   0.3524
-      12.00   1.2421   0.4360   0.9347   0.3658   0.3555   1.0903   0.3396
-      16.00   1.1870   0.4360   0.9347   0.3658   0.3555   1.0903   0.3327
-      20.00   1.1423   0.4360   0.9347   0.3658   0.3555   1.0903   0.3297
-      24.00   1.1084   0.4360   0.9347   0.3658   0.3555   1.0903   0.3267
-      28.00   1.0840   0.4360   0.9347   0.3658   0.3555   1.0903   0.3253
+      12.00   1.2404   0.4360   0.9347   0.3658   0.3555   1.0903   0.3396
+      16.00   1.1819   0.4360   0.9347   0.3658   0.3555   1.0903   0.3327
+      20.00   1.1325   0.4360   0.9347   0.3658   0.3555   1.0903   0.3297
+      24.00   1.0934   0.4360   0.9347   0.3658   0.3555   1.0903   0.3267
+      28.00   1.0638   0.4360   0.9347   0.3658   0.3555   1.0903   0.3253
 1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   1
                AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE  17
                  AERODYNAMIC FORCE AND MOMENT SYNTHESIS
@@ -657,13 +637,13 @@
    ALPHA   PANL 1   PANL 2   PANL 3   PANL 4   PANL 5   PANL 6   PANL 7   PANL 8
  
      0.0  0.00E+00  0.00E+00  0.00E+00  0.00E+00
-     4.0  2.58E-10  9.81E-02  2.22E-08 -9.81E-02
-     8.0 -2.07E-09  1.95E-01  3.81E-08 -1.95E-01
-    12.0  1.61E-09  2.98E-01  6.51E-08 -2.98E-01
-    16.0  2.14E-08  3.98E-01  6.86E-08 -3.98E-01
-    20.0  1.89E-10  4.93E-01  9.33E-08 -4.93E-01
-    24.0 -7.88E-08  5.82E-01  1.11E-07 -5.82E-01
-    28.0  2.20E-09  6.66E-01  1.28E-07 -6.66E-01
+     4.0  0.00E+00  9.81E-02  2.20E-08 -9.81E-02
+     8.0 -9.49E-10  1.95E-01  3.31E-08 -1.95E-01
+    12.0  8.85E-09  2.98E-01  5.61E-08 -2.98E-01
+    16.0  1.94E-08  3.98E-01  7.89E-08 -3.98E-01
+    20.0  2.83E-08  4.93E-01  1.01E-07 -4.93E-01
+    24.0 -5.02E-08  5.82E-01  1.18E-07 -5.82E-01
+    28.0  1.17E-08  6.66E-01  1.30E-07 -6.66E-01
 1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   1
                AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE  20
             FIN SET 1 PANEL HINGE MOMENTS (ABOUT HINGE LINE)
@@ -676,7 +656,7 @@
 
    ALPHA   PANL 1   PANL 2   PANL 3   PANL 4   PANL 5   PANL 6   PANL 7   PANL 8
  
-     0.0  0.00E+00  0.00E+00
+     0.0 -0.00E+00 -0.00E+00
      4.0 -4.26E-02  4.26E-02
      8.0 -8.43E-02  8.43E-02
     12.0 -1.22E-01  1.22E-01
@@ -696,14 +676,14 @@
 
    ALPHA   PANL 1   PANL 2   PANL 3   PANL 4   PANL 5   PANL 6   PANL 7   PANL 8
  
-     0.0  0.00E+00  0.00E+00  0.00E+00  0.00E+00
-     4.0 -2.74E-11 -1.08E-02 -2.36E-09  1.08E-02
-     8.0  2.18E-10 -2.20E-02 -4.01E-09  2.20E-02
-    12.0 -1.69E-10 -3.46E-02 -6.82E-09  3.46E-02
-    16.0 -2.24E-09 -4.75E-02 -7.18E-09  4.75E-02
-    20.0 -1.99E-11 -6.08E-02 -9.81E-09  6.08E-02
-    24.0  8.34E-09 -7.42E-02 -1.18E-08  7.42E-02
-    28.0 -2.34E-10 -8.73E-02 -1.36E-08  8.73E-02
+     0.0 -0.00E+00 -0.00E+00 -0.00E+00 -0.00E+00
+     4.0 -0.00E+00 -1.08E-02 -2.33E-09  1.08E-02
+     8.0  9.99E-11 -2.20E-02 -3.49E-09  2.20E-02
+    12.0 -9.27E-10 -3.46E-02 -5.87E-09  3.46E-02
+    16.0 -2.04E-09 -4.75E-02 -8.26E-09  4.75E-02
+    20.0 -2.97E-09 -6.08E-02 -1.06E-08  6.08E-02
+    24.0  5.31E-09 -7.42E-02 -1.25E-08  7.42E-02
+    28.0 -1.25E-09 -8.73E-02 -1.38E-08  8.73E-02
 1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   1
                AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE  22
                 STATIC AERODYNAMICS FOR BODY-FIN SET 1 AND 2
@@ -717,14 +697,14 @@
                    ----- LONGITUDINAL -----     -- LATERAL DIRECTIONAL --
          ALPHA       CN        CM        CA        CY       CLN       CLL
 
-          0.00     0.000     0.000     0.371     0.000     0.000     0.000
-          4.00     1.154    -1.462     0.371     0.000     0.000     0.000
-          8.00     2.427    -2.967     0.369     0.000     0.000     0.000
-         12.00     3.920    -4.723     0.366     0.000     0.000     0.000
-         16.00     5.488    -6.531     0.362     0.000     0.000     0.000
-         20.00     7.038    -8.383     0.356     0.000     0.000     0.000
-         24.00     8.472   -10.194     0.350     0.000     0.000     0.000
-         28.00     9.949   -12.031     0.343     0.000     0.000     0.000
+          0.00     0.000     0.000     0.371     0.000    -0.000     0.000
+          4.00     1.154    -1.462     0.371     0.000    -0.000    -0.000
+          8.00     2.427    -2.967     0.369     0.000    -0.000     0.000
+         12.00     3.920    -4.723     0.366     0.000    -0.000    -0.000
+         16.00     5.488    -6.531     0.362     0.000    -0.000    -0.000
+         20.00     7.038    -8.383     0.356     0.000    -0.000    -0.000
+         24.00     8.472   -10.194     0.350     0.000    -0.000    -0.000
+         28.00     9.949   -12.031     0.343     0.000    -0.000    -0.000
 
          ALPHA       CL        CD      CL/CD     X-C.P.
 
@@ -750,7 +730,7 @@
 
                    ---------- DERIVATIVES (PER DEGREE) ----------
          ALPHA       CNA         CMA         CYB         CLNB        CLLB
-          0.00      0.2739     -0.3603     -0.1931      0.4605      0.0000
+          0.00      0.2739     -0.3603     -0.1931      0.4605     -0.0000
           4.00      0.3033     -0.3709     -0.2020      0.4512     -0.0105
           8.00      0.3455     -0.4073     -0.2089      0.4212     -0.0187
          12.00      0.3827     -0.4454     -0.2092      0.3321     -0.0110
@@ -766,6 +746,94 @@
 
     BODY ALONE LINEAR DATA GENERATED FROM VAN DYKE HYBRID THEORY
 
+1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   1
+               AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE  24
+                           BODY ALONE DYNAMIC DERIVATIVES
+
+       ******* FLIGHT CONDITIONS AND REFERENCE QUANTITIES *******
+     MACH NO  =       2.36                REYNOLDS NO = 3.000E+06 /FT
+     SIDESLIP =       0.00 DEG                   ROLL =      0.00 DEG     
+     REF AREA =     11.045 FT**2        MOMENT CENTER =    18.750 FT
+     REF LENGTH =     3.75 FT          LAT REF LENGTH =      3.75 FT
+
+                    ------------ DYNAMIC DERIVATIVES (PER DEGREE) -----------
+         ALPHA       CNQ        CMQ        CAQ       CNAD       CMAD
+          0.00      0.221     -0.837      0.000      0.400     -0.267
+          4.00      0.221     -0.837      0.000      0.400     -0.267
+          8.00      0.221     -0.837      0.000      0.400     -0.267
+         12.00      0.221     -0.837      0.000      0.400     -0.267
+         16.00      0.221     -0.837      0.000      0.400     -0.267
+         20.00      0.221     -0.837      0.000      0.400     -0.267
+         24.00      0.221     -0.837      0.000      0.400     -0.267
+         28.00      0.221     -0.837      0.000      0.400     -0.267
+
+    PITCH RATE DERIVATIVES NON-DIMENSIONALIZED BY Q*LREF/2*V
+1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   1
+               AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE  25
+                           BODY ALONE DYNAMIC DERIVATIVES
+
+       ******* FLIGHT CONDITIONS AND REFERENCE QUANTITIES *******
+     MACH NO  =       2.36                REYNOLDS NO = 3.000E+06 /FT
+     SIDESLIP =       0.00 DEG                   ROLL =      0.00 DEG     
+     REF AREA =     11.045 FT**2        MOMENT CENTER =    18.750 FT
+     REF LENGTH =     3.75 FT          LAT REF LENGTH =      3.75 FT
+
+                    ------------ DYNAMIC DERIVATIVES (PER DEGREE) -----------
+         ALPHA       CYR       CLNR       CLLR        CYP       CLNP       CLLP
+          0.00      0.242     -0.929      0.000      0.000      0.000      0.000
+          4.00      0.242     -0.929      0.000      0.000      0.000      0.000
+          8.00      0.242     -0.929      0.000      0.000      0.000      0.000
+         12.00      0.242     -0.929      0.000      0.000      0.000      0.000
+         16.00      0.242     -0.929      0.000      0.000      0.000      0.000
+         20.00      0.242     -0.929      0.000      0.000      0.000      0.000
+         24.00      0.242     -0.929      0.000      0.000      0.000      0.000
+         28.00      0.242     -0.929      0.000      0.000      0.000      0.000
+
+    YAW AND ROLL RATE DERIVATIVES NON-DIMENSIONALIZED BY R*LATREF/2*V
+1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   1
+               AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE  26
+                        BODY + 2 FIN SETS DYNAMIC DERIVATIVES
+
+       ******* FLIGHT CONDITIONS AND REFERENCE QUANTITIES *******
+     MACH NO  =       2.36                REYNOLDS NO = 3.000E+06 /FT
+     SIDESLIP =       0.00 DEG                   ROLL =      0.00 DEG     
+     REF AREA =     11.045 FT**2        MOMENT CENTER =    18.750 FT
+     REF LENGTH =     3.75 FT          LAT REF LENGTH =      3.75 FT
+
+                    ------------ DYNAMIC DERIVATIVES (PER DEGREE) -----------
+         ALPHA       CNQ        CMQ        CAQ       CNAD       CMAD
+          0.00      1.601     -6.584      0.000      0.833     -1.652
+          4.00      1.622     -6.652      0.000      0.833     -1.652
+          8.00      1.570     -6.442      0.000      0.833     -1.652
+         12.00      1.491     -6.125      0.000      0.833     -1.652
+         16.00      1.379     -5.667      0.000      0.833     -1.652
+         20.00      1.270     -5.219      0.000      0.833     -1.652
+         24.00      1.171     -4.819      0.000      0.833     -1.652
+         28.00      1.075     -4.418      0.000      0.833     -1.652
+
+    PITCH RATE DERIVATIVES NON-DIMENSIONALIZED BY Q*LREF/2*V
+1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   1
+               AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE  27
+                        BODY + 2 FIN SETS DYNAMIC DERIVATIVES
+
+       ******* FLIGHT CONDITIONS AND REFERENCE QUANTITIES *******
+     MACH NO  =       2.36                REYNOLDS NO = 3.000E+06 /FT
+     SIDESLIP =       0.00 DEG                   ROLL =      0.00 DEG     
+     REF AREA =     11.045 FT**2        MOMENT CENTER =    18.750 FT
+     REF LENGTH =     3.75 FT          LAT REF LENGTH =      3.75 FT
+
+                    ------------ DYNAMIC DERIVATIVES (PER DEGREE) -----------
+         ALPHA       CYR       CLNR       CLLR        CYP       CLNP       CLLP
+          0.00      1.566     -6.755      0.000     -0.000      0.000     -0.422
+          4.00      1.533     -6.609      0.000      0.004     -0.019     -0.419
+          8.00      1.486     -6.403      0.000      0.009     -0.039     -0.420
+         12.00      1.443     -6.217      0.000      0.012     -0.055     -0.429
+         16.00      1.413     -6.085      0.000      0.015     -0.067     -0.437
+         20.00      1.398     -6.018      0.000      0.016     -0.072     -0.410
+         24.00      1.399     -6.023     -0.000      0.016     -0.068     -0.396
+         28.00      1.416     -6.098     -0.000      0.014     -0.062     -0.379
+
+    YAW AND ROLL RATE DERIVATIVES NON-DIMENSIONALIZED BY R*LATREF/2*V
 1         ***** THE USAF AUTOMATED MISSILE DATCOM * REV 3/99 *****     CASE   2
                AERODYNAMIC METHODS FOR MISSILE CONFIGURATIONS          PAGE   1
     CASE INPUTS
@@ -805,5 +873,4 @@
     PANEL 2 WAS VARIED
     PANEL 3 WAS FIXED
     PANEL 4 WAS VARIED
-    NOTE - *NT* PRINTED WHEN NO TRIM POINT COULD BE FOUND
     *** END OF JOB ***
