@@ -11,10 +11,14 @@ M = [m     0    0 0 0;
      0     0    0 1 0;
      0     0    0 0 1];
 
-b = 1; %スパン長
+%注意：DATCOMではFeetがデフォルト. DIMコマンドで単位を変更できる.
+b_feet = 5.355; %カナード(FINSET1)の最大スパン長[feet].
+b = 0.3048 * b_feet;%m
 U0 = 100;%飛行速度 100m/s
 rho = 1.293;%kg/m3
-S = 1;%翼面積
+%DATCOMのREF AREAからとった
+S_feet = 11.046;%[feet2]翼面積?
+S = 0.092903 * S_feet;%m2
 
 %FROM DATCOM: 迎角ゼロの場合
 C_yb = -0.1931;%CYB in DATCOM
