@@ -39,3 +39,5 @@ with pd.option_context('display.max_rows', None,
                        'display.precision', 3,
                        ):
     print(df)
+
+df.to_csv('for006.csv')
