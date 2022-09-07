@@ -22,15 +22,15 @@ S = 0.092903 * S_feet;%m2
 
 %FROM DATCOM: 迎角ゼロの場合
 %PAGE23: STATIC AERODYNAMICS FOR BODY-FIN SET 1 AND 2
-C_yb = -0.1931;%CYB in DATCOM
+C_yb = -0.2828;%CYB in DATCOM
 C_lb = 0;%CLLB in DATCOM
-C_nb = 0.4605;%CLNB in DATCOM
+C_nb = 0.2091;%CLNB in DATCOM
 %PAGE27: BODY + 2 FIN SETS DYNAMIC DERIVATIVES
 %FROM DATCOM: "DAMP DB14"カードを発行. DUMPではない（バグ?）。
 C_yp = 0;%CYP in DATCOM
-C_yr = 0.242;%CYR in DATCOM
-C_lp = 0;%CLLP in DATCOM
-C_nr = -0.929;%CLNR in DATCOM
+C_yr = 1.554;%CYR in DATCOM
+C_lp = -0.265;%CLLP in DATCOM
+C_nr = -5.224;%CLNR in DATCOM
 C_np = 0;%CLNP in DATCOM
 
 Y_b = rho*U0^2*S/(2*m)*C_yb;
@@ -58,9 +58,28 @@ Aprime = [Y_v Y_p+m*We Y_r - m*Ue m*g*cos(theta_e) m*g*sin(theta_e);
           0   1        0          0                0;
           0   0        1          0                0];
 
-Y_xi = 1; Y_zeta = 1;
-L_xi = 1; L_zeta = 1;
-N_xi = 1; N_zeta = 1;
+%エルロンは使わないのでゼロにする
+C_y_aileron = 0;%記述なし？？
+C_l_aileron = 0 ;%航空機力学入門 p.96, p.97
+C_n_aileron = 0;%航空機力学入門 p.97, p.98 -> 風洞実験?
+
+Sf = ;
+S = ;
+C_L_rudder_fin = ;
+z_f_delta = ;
+b = ;
+V_fin_star = ;
+
+C_y_rudder = Sf/S*C_L_rudder_fin;%航空機力学入門 p.91
+C_l_rudder = z_f_delta/b*Sf/S;%航空機力学入門 p.91
+C_n_rudder = -V_fin_star*C_L_rudder_fin;%航空機力学入門 p.101, p.102
+
+Y_xi = rho*U0^2*S/(2*m)*C_y_aileron; 
+Y_zeta = rho*U0^2*S/(2*m)*C_y_rudder;
+L_xi = rho*U0*S*b^2/(2*I_x)*C_l_aileron; 
+L_zeta = rho*U0*S*b^2/(2*I_x)*C_l_rudder;
+N_xi = rho*U0*S*b^2/(2*I_z)*C_n_aileron;
+N_zeta = rho*U0*S*b^2/(2*I_z)*C_n_rudder;
 
 Bprime = [Y_xi Y_zeta;
           L_xi L_zeta;
@@ -71,5 +90,18 @@ Bprime = [Y_xi Y_zeta;
 A = inv(M)*Aprime;
 B = inv(M)*Bprime;
 
-C = [0 1 1 1 1];
-D = 0;
+C = [0 1 0 0 0;
+     0 0 1 0 0;
+     0 0 0 1 0;
+     0 0 0 0 1];
+D = [0 0
+     0 0
+     0 0
+     0 0];
+
+x0 = [U0 0 0 0 0];
+
+sys = ss(A,B,C,D);
+
+
+
