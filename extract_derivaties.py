@@ -33,5 +33,9 @@ dynamic_string_array = page27\
 static_df = get_df(static_string_array)
 dynamic_df = get_df(dynamic_string_array)
 df = static_df.merge(dynamic_df, how='left', on='ALPHA')
-print(df)
 
+with pd.option_context('display.max_rows', None,
+                       'display.max_columns', None,
+                       'display.precision', 3,
+                       ):
+    print(df)
